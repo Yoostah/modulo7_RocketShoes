@@ -8,7 +8,7 @@ export default function cart(state = [], action) {
         draft.push(product);
       });
 
-    case '@cart/REMOVE':
+    case '@cart/REMOVE_SUCCESS':
       return produce(state, draft => {
         const productIndex = draft.findIndex(p => p.id === action.id);
 
