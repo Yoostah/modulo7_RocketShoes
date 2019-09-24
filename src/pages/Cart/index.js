@@ -21,9 +21,11 @@ export default function Cart() {
   );
 
   const total = useSelector(state =>
-    state.cart.reduce((totalProducts, product) => {
-      return total + product.price * product.amount;
-    }, 0)
+    formatPrice(
+      state.cart.reduce((totalProducts, product) => {
+        return totalProducts + product.price * product.amount;
+      }, 0)
+    )
   );
 
   function increment(product) {
